@@ -1,4 +1,3 @@
-
 import click
 from api.models import db, User
 
@@ -16,7 +15,7 @@ def setup_commands(app):
     """
     @app.cli.command("insert-test-users") # name of our command
     @click.argument("count") # argument of out command
-    def insert_test_users(count):
+    def insert_test_data(count):
         print("Creating test users")
         for x in range(1, int(count) + 1):
             user = User()
@@ -29,6 +28,4 @@ def setup_commands(app):
 
         print("All test users created")
 
-    @app.cli.command("insert-test-data")
-    def insert_test_data():
-        pass
+        ### Insert the code to populate others tables if needed
